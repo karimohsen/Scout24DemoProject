@@ -16,7 +16,7 @@ Picture Gallery that satisfies the following use cases:-
 
 ### Demo
 
-1-mvn spring-boot:run
+1- mvn spring-boot:run
 
 2- Access http://localhost:8080 in your browser
 
@@ -34,5 +34,6 @@ maven installed on your machine
 * [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html) - The java version used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring boot](https://projects.spring.io/spring-boot/) - For embedded server and auto configuration
+* [HammerJs](http://hammerjs.github.io/) - To support touch gestures to web page
 
 Contact me : karim.abdelmohsen.1992@gmail.com

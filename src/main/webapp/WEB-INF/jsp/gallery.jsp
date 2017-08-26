@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
 <head>
 <h1>Picture Gallery</h1>
 <style>
@@ -48,8 +49,16 @@ function sendRequest(url){
     window.location.href = url;
 }
 window.onload = function setImageCounter(){
-document.getElementById("counter").textContent="( "+${imageId} + " / " + ${numberOfImages}+" )";
+    document.getElementById("counter").textContent="( "+${imageId} + " / " + ${numberOfImages}+" )";
+    Hammer(document.getElementById("image")).on("swipeleft", function() {
+            show_image('prev');
+        });
+
+        Hammer(document.getElementById("image")).on("swiperight", function() {
+            show_image('next');
+        });
 };
+
 </script>
 </head>
 
