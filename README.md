@@ -2,11 +2,11 @@
 
 Picture Gallery that satisfies the following use cases:-
 
-1.The number and URLs of the pictures is configured on an instance basis.
+1-The number and URLs of the pictures is configured on an instance basis.
 
-2. There should be one button to go to the next image and one to go back. If the user is currently viewing the first image, pressing the “previous button” should show him the last image. Analogously to this, when viewing the last image, pressing the “next button” should take him to the first image. 
+2- There should be one button to go to the next image and one to go back. If the user is currently viewing the first image, pressing the “previous button” should show him the last image. Analogously to this, when viewing the last image, pressing the “next button” should take him to the first image. 
 
-3. A counter should be shown, indicating the current image shown out of how many.
+3- A counter should be shown, indicating the current image shown out of how many.
 
 4- Only use plain JavaScript.
 
@@ -34,6 +34,6 @@ maven installed on your machine
 * [Java 8](http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html) - The java version used
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring boot](https://projects.spring.io/spring-boot/) - For embedded server and auto configuration
-* [HammerJs](http://hammerjs.github.io/) - To support touch gestures to web page
+* [HammerJs](http://hammerjs.github.io/) - To support touch gestures on web page
 
 Contact me : karim.abdelmohsen.1992@gmail.com
