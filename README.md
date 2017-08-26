@@ -2,11 +2,17 @@
 
 Picture Gallery that satisfies the following use cases:-
 
-1.Upload user’s phonebook into DB
+1.The number and URLs of the pictures is configured on an instance basis.
 
-2.Query user profile by number
+2. There should be one button to go to the next image and one to go back. If the user is currently viewing the first image, pressing the “previous button” should show him the last image. Analogously to this, when viewing the last image, pressing the “next button” should take him to the first image. 
 
-3.Query user profiles by name
+3. A counter should be shown, indicating the current image shown out of how many.
+
+4- Only use plain JavaScript.
+
+5- The gallery should also support swiping on mobile devices (mobile phones and tablets). 
+
+6- Use animations to change the images.
 
 ### Prerequisites
 
