@@ -10,9 +10,20 @@ img {
     width: 100%;
     height: auto;
 }
+.p{
+    border: none;
+    color: #4CAF50;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:100%;
+}
 .button {
     background-color: #4CAF50;
-    border: none;
+    border: 2px solid black;
+    border-radius: 12px;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -36,12 +47,15 @@ function show_image(value) {
 function sendRequest(url){
     window.location.href = url;
 }
+window.onload = function setImageCounter(){
+document.getElementById("counter").textContent="( "+${imageId} + " / " + ${numberOfImages}+" )";
+};
 </script>
 </head>
 
 <body>
-
-	<img id="image" src="data:image/jpeg;base64,${image}">
+    <p id="counter" class="p"></p>
+	<img id="image" src="data:image/jpeg;base64,${image}"/>
     <input class="button" type="button" value="Next" onclick="show_image('next')" />
     <input class="button" type="button" value="Previous" onclick="show_image('prev')" />
 

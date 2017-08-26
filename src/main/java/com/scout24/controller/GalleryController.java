@@ -38,6 +38,7 @@ public class GalleryController {
             String base64Encoded = new String(encodeBase64, "UTF-8");
             model.put("image", base64Encoded);
             model.put("imageId", number);
+            model.put("numberOfImages", 10);
         } catch (IOException e) {
         }
         return "gallery";

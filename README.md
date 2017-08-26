@@ -14,6 +14,15 @@ Picture Gallery that satisfies the following use cases:-
 
 6- Use animations to change the images.
 
+### Demo
+
+1-mvn spring-boot:run
+
+2- Access http://localhost:8080 in your browser
+
+
+
+
 ### Prerequisites
 
 Java 7 or 8 installed on your machine
