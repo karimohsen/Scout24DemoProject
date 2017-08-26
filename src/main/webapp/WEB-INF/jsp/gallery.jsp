@@ -33,6 +33,22 @@ img {
     font-size: 16px;
     width:100%;
 }
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+img {  
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+
+  background: #333;
+  padding: 30px;
+}
+
 </style>
 <script>
 function show_image(value) {
