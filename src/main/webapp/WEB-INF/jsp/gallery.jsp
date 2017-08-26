@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 <h1>Picture Gallery</h1>
+<style>
+img {
+    width: 100%;
+    height: auto;
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:100%;
+}
+</style>
 <script>
 function show_image(value) {
   var imageNum;
