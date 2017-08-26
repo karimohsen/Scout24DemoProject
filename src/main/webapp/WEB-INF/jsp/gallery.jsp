@@ -41,14 +41,10 @@ img {
     transform: translateX(0);
   }
 }
-
-img {  
+img {
   animation: 1s ease-out 0s 1 slideInFromLeft;
-
-  background: #333;
   padding: 30px;
 }
-
 </style>
 <script>
 function show_image(value) {
@@ -60,7 +56,6 @@ function show_image(value) {
  }
  sendRequest('/pic?image='+imageNum);
 }
-
 function sendRequest(url){
     window.location.href = url;
 }
@@ -69,12 +64,10 @@ window.onload = function setImageCounter(){
     Hammer(document.getElementById("image")).on("swipeleft", function() {
             show_image('prev');
         });
-
         Hammer(document.getElementById("image")).on("swiperight", function() {
             show_image('next');
         });
 };
-
 </script>
 </head>
 
