@@ -1,6 +1,8 @@
 package com.scout24.controller;
 
 import com.scout24.service.GalleryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,9 @@ import java.util.Map;
 
 @Controller
 public class GalleryController {
+
+    private static final Logger logger = LoggerFactory
+            .getLogger(GalleryController.class);
 
     private static final int NUMBER_OF_IMAGES = 10;
 
@@ -40,7 +45,7 @@ public class GalleryController {
         try {
             base64Encoded = new String(galleryService.getImageAsByteArray(number), "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error("Error occur and the error was : " + e.getMessage().toString());
         }
         model.put("image", base64Encoded);
         model.put("imageId", number);

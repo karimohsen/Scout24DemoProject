@@ -2,6 +2,8 @@ package com.scout24.service;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,9 @@ import java.io.InputStream;
 @Service
 public class GalleryService {
 
+    private static final Logger logger = LoggerFactory
+            .getLogger(GalleryService.class);
+
     @Autowired
     ServletContext servletContext;
 
@@ -25,7 +30,7 @@ public class GalleryService {
         try {
             encodeBase64 = Base64.encodeBase64(IOUtils.toByteArray(in));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error occur and the error was : " + e.getMessage().toString());
         }
         return encodeBase64;
     }
