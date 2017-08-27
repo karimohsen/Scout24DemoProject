@@ -16,7 +16,7 @@
              }else{
                 imageNum = Number(${imageId}) + 1;
              }
-             sendRequest('/pic?image='+imageNum);
+             sendRequest('/gallery?image='+imageNum);
         }
 
 

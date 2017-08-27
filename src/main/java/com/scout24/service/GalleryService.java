@@ -14,11 +14,11 @@ import java.io.InputStream;
  */
 @Service
 public class GalleryService {
-    //
 
     @Autowired
     ServletContext servletContext;
 
+    //This method takes the image number and reads the image from resources and return the image as byte array
     public byte[] getImageAsByteArray(int imageNumber) {
         InputStream in = servletContext.getResourceAsStream("/WEB-INF/images/" + imageNumber + ".jpg");
         byte[] encodeBase64 = new byte[0];
