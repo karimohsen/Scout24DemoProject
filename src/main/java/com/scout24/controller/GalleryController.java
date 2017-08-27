@@ -1,27 +1,26 @@
 package com.scout24.controller;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.tomcat.util.codec.binary.Base64;
+import com.scout24.service.GalleryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.ServletContext;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 @Controller
 public class GalleryController {
 
+    private static final int NUMBER_OF_IMAGES = 10;
 
     @Autowired
-    ServletContext servletContext;
+    GalleryService galleryService;
 
-    @RequestMapping(value="/")
-    public String defaultHandler(){
+
+    @RequestMapping(value = "/")
+    public String defaultUrlHandler() {
         return "redirect:/pic?image=1";
     }
 
@@ -32,15 +31,16 @@ public class GalleryController {
         } else if (number > 10) {
             return "redirect:/pic?image=1";
         }
-        InputStream in = servletContext.getResourceAsStream("/WEB-INF/images/" + number + ".jpg");
+        String base64Encoded = null;
         try {
-            byte[] encodeBase64 = Base64.encodeBase64(IOUtils.toByteArray(in));
-            String base64Encoded = new String(encodeBase64, "UTF-8");
-            model.put("image", base64Encoded);
-            model.put("imageId", number);
-            model.put("numberOfImages", 10);
-        } catch (IOException e) {
+            base64Encoded = new String(galleryService.getImageAsByteArray(number), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
+        model.put("image", base64Encoded);
+        model.put("imageId", number);
+        model.put("numberOfImages", NUMBER_OF_IMAGES);
+
         return "gallery";
     }
 
